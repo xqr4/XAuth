@@ -1,0 +1,23 @@
+name: XAuth
+version: 1.0.0
+main: com.xqr.auth.XAuth
+api-version: 1.20
+description: Advanced Authentication Plugin
+authors: [xqr4]
+
+commands:
+  register:
+    description: Sunucuya kayıt ol
+    usage: /register <şifre> <şifre_tekrar>
+  login:
+    description: Sunucuya giriş yap
+    usage: /login <şifre>
+  xauth:
+    description: XAuth admin komutları
+    usage: /xauth <unreg|alts> <kullanıcı>
+    permission: xauth.admin
+
+permissions:
+  xauth.admin:
+    description: XAuth admin komutlarına erişim
+    default: op
