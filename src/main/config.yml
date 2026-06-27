@@ -1,0 +1,85 @@
+# ╔══════════════════════════════════════════╗
+# ║         XAuth - Yapılandırma Dosyası     ║
+# ╚══════════════════════════════════════════╝
+
+# Veritabanı ayarları
+database:
+  # Veritabanı tipi: sqlite (şimdilik sadece sqlite destekleniyor)
+  type: sqlite
+  # SQLite dosya adı (plugins/XAuth/ klasöründe oluşturulur)
+  filename: xauth.db
+
+# Oturum ayarları
+session:
+  # Aynı IP'den giriş yapan oyuncu otomatik login olsun mu?
+  enabled: true
+  # Oturum süresi (dakika) - 0 = sınırsız
+  timeout: 60
+
+# Giriş / Kayıt ayarları
+auth:
+  # Giriş için maksimum deneme sayısı (aşılırsa kicklenir)
+  max-login-attempts: 5
+  # Kayıt için şifre minimum uzunluğu
+  min-password-length: 4
+  # Kayıt için şifre maksimum uzunluğu
+  max-password-length: 32
+  # Giriş yapmak için verilen süre (saniye) - 0 = süresiz
+  login-timeout: 60
+  # Kayıt olmak için verilen süre (saniye) - 0 = süresiz
+  register-timeout: 120
+
+# Anti-bot / Hızlı giriş koruması
+anti-bot:
+  # Hızlı giriş koruması aktif mi?
+  enabled: true
+  # İki giriş arasındaki minimum süre (saniye)
+  min-join-delay: 2
+  # Kick mesajı
+  kick-message: "&cXAuth: Sunucuya Çok Hızlı Giriş Yapıyorsunuz. Lütfen Biraz Yavaşlayın!"
+
+# Körlük efekti
+blindness:
+  # Giriş yapmayan oyunculara körlük efekti verilsin mi?
+  enabled: true
+
+# Konum dondurma
+freeze:
+  # Giriş yapmayan oyuncular dondurulsun mu?
+  enabled: true
+
+# Mesajlar (& renk kodlarını destekler)
+messages:
+  prefix: "&8[&bXAuth&8] &r"
+
+  # Giriş mesajları
+  login-required: "&cGiriş yapmanız gerekiyor! &e/login <şifre>"
+  login-success: "&aGiriş başarılı! Hoş geldiniz, &e{player}&a!"
+  login-wrong-password: "&cYanlış şifre! Kalan deneme: &e{attempts}"
+  login-too-many-attempts: "&cÇok fazla hatalı giriş denemesi! Sunucudan atıldınız."
+  login-timeout: "&cGiriş süresi doldu! Sunucudan atıldınız."
+  already-logged-in: "&eZaten giriş yapmış durumdasınız!"
+
+  # Kayıt mesajları
+  register-required: "&cKayıt olmanız gerekiyor! &e/register <şifre> <şifre_tekrar>"
+  register-success: "&aKayıt başarılı! Hoş geldiniz, &e{player}&a!"
+  register-already-registered: "&cBu isimle zaten kayıtlı bir hesap var!"
+  register-passwords-not-match: "&cŞifreler eşleşmiyor!"
+  register-password-too-short: "&cŞifre en az &e{min} &ckarakter olmalıdır!"
+  register-password-too-long: "&cŞifre en fazla &e{max} &ckarakter olabilir!"
+  register-usage: "&eKullanım: &f/register <şifre> <şifre_tekrar>"
+  register-timeout: "&cKayıt süresi doldu! Sunucudan atıldınız."
+
+  # Genel mesajlar
+  no-permission: "&cBu komutu kullanmak için yetkiniz yok!"
+  no-move: "&cGiriş yapmadan hareket edemezsiniz!"
+  no-chat: "&cGiriş yapmadan sohbet edemezsiniz!"
+  session-restored: "&aOturumunuz geri yüklendi, otomatik giriş yapıldı!"
+
+  # Admin mesajları
+  admin-unreg-success: "&a{player} adlı oyuncunun kaydı silindi!"
+  admin-unreg-not-found: "&c{player} adlı oyuncu bulunamadı!"
+  admin-alts-header: "&e{player} ile aynı IP'den giriş yapan hesaplar:"
+  admin-alts-entry: "&7- &f{player} &7(&e{ip}&7) &8- Son giriş: &f{date}"
+  admin-alts-none: "&e{player} ile aynı IP'den başka hesap bulunamadı."
+  admin-usage: "&eKullanım: &f/xauth <unreg|alts> <kullanıcı>"
