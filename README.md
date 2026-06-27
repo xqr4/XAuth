@@ -9,7 +9,7 @@
 
 ## 📖 Nedir?
 
-XAuth, Minecraft Java Edition sunucuları için geliştirilmiş gelişmiş bir kimlik doğrulama eklentisidir. Cracked (lisanssız) sunucularda oyuncu hesaplarını korumak için kayıt ve giriş sistemi sunar.
+XAuth, Minecraft Java Edition sunucuları için geliştirilmiş gelişmiş bir kimlik doğrulama eklentisidir. Cracked sunucularda oyuncu hesaplarını korumak için kayıt ve giriş sistemi sunar.
 
 ---
 
